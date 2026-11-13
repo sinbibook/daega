@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.10.0",
-    "generatedAt": "2026-11-13T06:08:51.618650930Z",
+    "version": "1.11.0",
+    "generatedAt": "2026-11-13T06:09:33.908223855Z",
     "templateType": "trip_l",
     "propertyId": "01a18a89-f2c5-7559-8d36-6556c5b5d29f",
     "homepageId": "01a1d347-1373-7664-be0b-d4a0340dd06f"
@@ -1169,7 +1169,7 @@
                     "id": "01a1d367-5f60-72c6-a9bf-379434f67a3c",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a1d347-1373-7664-be0b-d4a0340dd06f/main_hero/1794548129217-o703ab6eru.jpg",
                     "sortOrder": 0,
-                    "description": "",
+                    "description": "한옥",
                     "isSelected": true,
                     "blockId": null
                   },
@@ -1177,7 +1177,7 @@
                     "id": "01a1d367-603b-7f81-a014-8908dc898207",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a1d347-1373-7664-be0b-d4a0340dd06f/main_hero/1794548129220-34v6g9pygm.jpg",
                     "sortOrder": 1,
-                    "description": "",
+                    "description": "힐링",
                     "isSelected": true,
                     "blockId": null
                   },
@@ -1185,7 +1185,7 @@
                     "id": "01a1d367-5f4c-7ea5-9c18-1ce310657ee5",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a1d347-1373-7664-be0b-d4a0340dd06f/main_hero/1794548129278-fxzkj9hzfy.jpg",
                     "sortOrder": 2,
-                    "description": "",
+                    "description": "고즈넉한 옛 정취",
                     "isSelected": true,
                     "blockId": null
                   },
