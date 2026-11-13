@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.1.0",
-    "generatedAt": "2026-11-13T05:35:31.320614194Z",
+    "version": "1.2.0",
+    "generatedAt": "2026-11-13T05:58:56.729049320Z",
     "templateType": "trip_l",
     "propertyId": "01a18a89-f2c5-7559-8d36-6556c5b5d29f",
     "homepageId": "01a1d347-1373-7664-be0b-d4a0340dd06f"
@@ -1104,14 +1104,14 @@
                 "description": ""
               },
               "essence": {
-                "title": "",
+                "title": "편안하게 머무는 공간",
                 "images": [ ],
                 "videos": [ ],
                 "mediaType": "image",
                 "description": ""
               },
               "gallery": {
-                "title": "",
+                "title": "특별한 공간",
                 "images": [ ],
                 "videos": [ ],
                 "mediaType": "image",
