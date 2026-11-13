@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.14.0",
-    "generatedAt": "2026-11-13T06:20:54.455973542Z",
+    "version": "1.15.0",
+    "generatedAt": "2026-11-13T06:21:21.860803684Z",
     "templateType": "trip_l",
     "propertyId": "01a18a89-f2c5-7559-8d36-6556c5b5d29f",
     "homepageId": "01a1d347-1373-7664-be0b-d4a0340dd06f"
@@ -1014,7 +1014,7 @@
                     "id": "01a1d35d-a8e7-7cf5-9a3e-4b867819af5f",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a1d347-1373-7664-be0b-d4a0340dd06f/index_hero/1794547492600-v50re2fka6.jpg",
                     "sortOrder": 2,
-                    "description": "고즈넉한 정취",
+                    "description": "휴식",
                     "isSelected": true,
                     "blockId": null
                   },
