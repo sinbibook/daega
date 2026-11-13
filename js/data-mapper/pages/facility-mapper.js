@@ -88,36 +88,7 @@ var FacilityMapper = {
       tx1El.textContent = facility.name || '';
     }
 
-    // Swiper 초기화
-    var con0Container = document.querySelector('.con0');
-    if (con0Container) {
-      var con0SwiperEl = con0Container.querySelector('.swiper-container');
-
-      // Swiper 인스턴스는 .con0 이 아니라 .swiper-container 에 붙는다.
-      // 예전엔 con0Container.swiper(항상 undefined)를 보느라 기존 인스턴스가 파괴되지 않아,
-      // 프리뷰 재렌더 때마다 같은 컨테이너에 인스턴스가 쌓이고 autoplay 가 서로 다른 주기로
-      // 겹쳐 돌면서 슬라이드 순서가 튀거나 되감기는 것처럼 보였다.
-      if (con0SwiperEl && con0SwiperEl.swiper) {
-        con0SwiperEl.swiper.destroy(true, true);
-      }
-
-      // delay 는 header-footer-loader.reinitializeSwiper 의 con0 설정과 반드시 같아야 한다.
-      // 저기서 100ms 뒤 이 인스턴스를 파괴하고 다시 만들기 때문에, 값이 다르면
-      // 여기 설정은 무시되고 슬라이드 간격이 코드 의도와 다르게 동작한다.
-      new Swiper(con0SwiperEl, {
-        slidesPerView: 1,
-        loop: selectedImages.length > 1,
-        effect: 'fade',
-        autoplay: selectedImages.length > 1 ? {
-          delay: 2500,
-          disableOnInteraction: false,
-        } : false,
-        navigation: {
-          nextEl: con0Container.querySelector('.swiper-button-next'),
-          prevEl: con0Container.querySelector('.swiper-button-prev'),
-        },
-      });
-    }
+    // Swiper 초기화는 공통 로더가 매핑 후 한 번만 수행한다.
   },
 
   // Con9: 시설 상세정보 (이름, 설명, 이용안내, 3개 이미지)
@@ -276,11 +247,18 @@ var FacilityMapper = {
       slide.appendChild(link);
       wrapper.appendChild(slide);
     });
+
+    // 메인과 동일하게 시설이 3개일 때 슬라이드를 채워 연속 루프한다.
+    if (facilities.length === 3) {
+      var originals = Array.prototype.slice.call(wrapper.children);
+      for (var i = 0; wrapper.children.length < 6; i++) {
+        wrapper.appendChild(originals[i % originals.length].cloneNode(true));
+      }
+    }
   },
 
-  // Con4: 시설 제목(about.title, 없으면 '준비된 특별함') + 부대시설명 태그 (최대 3개)
+  // Con4: 시설 제목과 메인과 동일한 숙소명/부대시설 태그
   mapFacilityAbout: function(data) {
-    var facilities = (data && data.property && data.property.facilities) || [];
     var currentFacility = this.getCurrentFacility(data);
 
     // Title 매핑 (customFields...facility[current].sections[0].about.title, 없으면 fallback)
@@ -297,18 +275,21 @@ var FacilityMapper = {
       titleEl.textContent = (aboutTitle && aboutTitle.trim()) ? aboutTitle : '준비된 특별함';
     }
 
-    // SubTitle 매핑 (부대시설명 #태그, 최대 3개)
+    // 메인의 부대시설 영역과 같은 숙소명 + 부대시설 태그
     var subTitle = document.querySelector('.con4 .subTitle');
     if (subTitle) {
       subTitle.innerHTML = '';
-      facilities.slice(0, 3).forEach(function(facility) {
-        if (facility && facility.name) {
-          var tag = document.createElement('div');
-          tag.className = 'tag';
-          tag.textContent = '#' + facility.name;
-          subTitle.appendChild(tag);
-        }
-      });
+      var nameKr = HeaderFooterMapper.getPropertyName(data);
+      if (nameKr) {
+        var nameTag = document.createElement('div');
+        nameTag.className = 'tag';
+        nameTag.textContent = '#' + nameKr;
+        subTitle.appendChild(nameTag);
+      }
+      var facilityTag = document.createElement('div');
+      facilityTag.className = 'tag';
+      facilityTag.textContent = '#부대시설';
+      subTitle.appendChild(facilityTag);
     }
   },
 

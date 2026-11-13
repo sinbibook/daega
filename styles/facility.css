@@ -267,6 +267,10 @@
 }
 .con4 .conTitle .subTitle {
   justify-content: center;
+  flex-wrap: wrap;
+}
+.con4 .conTitle .subTitle .tag {
+  white-space: nowrap;
 }
 .con4 .swiper-container {
   position: absolute;
@@ -312,10 +316,6 @@
   margin-top: 15px;
   font-size: 16px;
   color: var(--color-secondary);
-}
-.con4 .tx .tx1 {
-  font-family: var(--font-ko-main);
-  letter-spacing: 0.02em;
 }
 .con4 .swiperNavi {
   display: flex;
