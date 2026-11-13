@@ -142,6 +142,12 @@ var HeaderFooterLoader = {
   },
 
   mapPageContent: function(data) {
+    // Swiper loop이 관리하는 슬라이드를 교체하기 전에 인스턴스를 정리한다.
+    var heroSwiperEl = document.querySelector('.con0 .swiper-container');
+    if (heroSwiperEl && heroSwiperEl.swiper) {
+      heroSwiperEl.swiper.destroy(true, true);
+    }
+
     // SEO: 페이지 종류와 무관하게 전역 seo 메타태그를 먼저 주입 (공통 base-mapper)
     if (typeof BaseMapper !== 'undefined') BaseMapper.updateMetaTags(data);
 
@@ -175,25 +181,32 @@ var HeaderFooterLoader = {
   },
 
   reinitializeSwiper: function() {
-    // con0 Swiper 재초기화 (동적 슬라이드 생성 후)
+    // 모든 페이지의 히어로는 매핑이 끝난 뒤 한 번만 초기화한다.
     var con0Container = document.querySelector('.con0');
-    if (con0Container) {
-      var con0SwiperEl = con0Container.querySelector('.swiper-container');
-      if (con0SwiperEl && con0SwiperEl.swiper) {
-        con0SwiperEl.swiper.destroy(true, true);
-      }
+    var con0SwiperEl = con0Container && con0Container.querySelector('.swiper-container');
+    if (con0SwiperEl) {
+      if (con0SwiperEl.swiper) con0SwiperEl.swiper.destroy(true, true);
 
-      new Swiper(con0Container.querySelector(".swiper-container"), {
+      var heroSlides = con0SwiperEl.querySelectorAll('.swiper-slide').length;
+      var nextButton = con0Container.querySelector('.swiper-button-next');
+      var prevButton = con0Container.querySelector('.swiper-button-prev');
+      // 1장일 때 생성된 aria-disabled가 여러 장으로 갱신될 때 남지 않도록 한다.
+      [nextButton, prevButton].forEach(function(button) {
+        if (button) button.removeAttribute('aria-disabled');
+      });
+
+      new Swiper(con0SwiperEl, {
         slidesPerView: 1,
-        loop: con0Container.querySelectorAll('.swiper-slide').length > 1, // 슬라이드 부족 시 loop 비활성 (Swiper 경고 방지)
-        effect: "fade",
-        autoplay: {
+        loop: heroSlides > 1,
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
+        autoplay: heroSlides > 1 ? {
           delay: 2500,
           disableOnInteraction: false,
-        },
+        } : false,
         navigation: {
-          nextEl: con0Container.querySelector(".swiper-button-next"),
-          prevEl: con0Container.querySelector(".swiper-button-prev"),
+          nextEl: nextButton,
+          prevEl: prevButton,
         },
       });
     }
