@@ -20,8 +20,10 @@ class PreviewHandler {
 
         this.notifyReady();
 
+        // 일반 페이지는 HeaderFooterLoader가 이미 데이터를 불러온다. 중복 매핑 시
+        // 사용자가 넘긴 히어로 슬라이더가 2초 뒤 처음부터 다시 시작된다.
         this.fallbackTimeout = setTimeout(() => {
-            if (!this.adminDataReceived) {
+            if (!this.adminDataReceived && window.parent !== window) {
                 this.loadFallbackData();
             }
         }, 2000);
