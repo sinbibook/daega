@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.6.0",
-    "generatedAt": "2026-11-13T06:04:02.022670629Z",
+    "version": "1.7.0",
+    "generatedAt": "2026-11-13T06:04:45.698851295Z",
     "templateType": "trip_l",
     "propertyId": "01a18a89-f2c5-7559-8d36-6556c5b5d29f",
     "homepageId": "01a1d347-1373-7664-be0b-d4a0340dd06f"
@@ -1306,7 +1306,16 @@
             {
               "hero": {
                 "title": "",
-                "images": [ ]
+                "images": [
+                  {
+                    "id": "01a1d382-21b9-76b4-97b0-882bc045dc01",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a1d347-1373-7664-be0b-d4a0340dd06f/reservation_hero/1794549882932-4wflw3yy8b.jpg",
+                    "sortOrder": 0,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  }
+                ]
               },
               "about": {
                 "title": "",
