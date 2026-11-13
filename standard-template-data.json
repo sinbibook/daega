@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.7.0",
-    "generatedAt": "2026-11-13T06:04:45.698851295Z",
+    "version": "1.8.0",
+    "generatedAt": "2026-11-13T06:07:42.763361841Z",
     "templateType": "trip_l",
     "propertyId": "01a18a89-f2c5-7559-8d36-6556c5b5d29f",
     "homepageId": "01a1d347-1373-7664-be0b-d4a0340dd06f"
@@ -77,7 +77,7 @@
       {
         "id": "01a1d30e-615d-7ad7-9fd1-48145f50e9bc",
         "name": "힐링한옥",
-        "description": "",
+        "description": "고즈넉한 풍경 속에서\n여유로운 시간을 보내보세요.",
         "usageGuide": "",
         "displayOrder": 0,
         "images": [
@@ -1141,7 +1141,16 @@
             {
               "hero": {
                 "title": "",
-                "images": [ ]
+                "images": [
+                  {
+                    "id": "01a1d384-d972-76ed-b51e-3f001e8cea04",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a1d347-1373-7664-be0b-d4a0340dd06f/directions_hero/1794550061132-jlxa33e6ei.jpg",
+                    "sortOrder": 0,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  }
+                ]
               },
               "notice": {
                 "title": "",
