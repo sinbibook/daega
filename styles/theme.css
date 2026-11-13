@@ -1,0 +1,14 @@
+/* CDN Fonts */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css');
+@import url("https://fonts.cdnfonts.com/css/travel-november");
+@import url('https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+
+/* CSS Variables */
+:root {
+  --font-ko-main: 'Pretendard', sans-serif;
+  --font-ko-sub: 'Pretendard', sans-serif;
+  --font-en-main: 'Travel November', serif;
+  --color-primary: #FFFFFF;
+  --color-secondary: #4D4036;
+}
