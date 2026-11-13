@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.16.0",
-    "generatedAt": "2026-11-13T06:22:16.761074044Z",
+    "version": "1.17.0",
+    "generatedAt": "2026-11-13T06:27:31.844523333Z",
     "templateType": "trip_l",
     "propertyId": "01a18a89-f2c5-7559-8d36-6556c5b5d29f",
     "homepageId": "01a1d347-1373-7664-be0b-d4a0340dd06f"
@@ -77,7 +77,7 @@
       {
         "id": "01a1d30e-615d-7ad7-9fd1-48145f50e9bc",
         "name": "힐링한옥",
-        "description": "고즈넉한 풍경 속에서\n여유로운 시간을 보내보세요.",
+        "description": "햇살 아래에서 한옥에 앉아\n창밖 풍경을 감상하며 여유로운 시간을 보내보세요.",
         "usageGuide": "",
         "displayOrder": 0,
         "images": [
@@ -134,6 +134,14 @@
             "id": "01a1d354-79a5-7258-a289-df778b6590fd",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/01a19f23-960d-7069-9fd2-4eda65083822/main/1794546890652-k5588rgl65.jpg",
             "sortOrder": 1,
+            "description": "",
+            "isSelected": true,
+            "blockId": null
+          },
+          {
+            "id": "01a1d396-1135-7786-aab7-795e03e318cb",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/01a19f23-960d-7069-9fd2-4eda65083822/main/1794551189377-lkax0xle3b.jpg",
+            "sortOrder": 2,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -1104,7 +1112,7 @@
                 "description": ""
               },
               "essence": {
-                "title": "편안하게 머무는 공간",
+                "title": "옛 정취 속 머무르는 공간",
                 "images": [ ],
                 "videos": [ ],
                 "mediaType": "image",
